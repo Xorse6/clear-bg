@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import 'dotenv/config';
 import connectDB from "./configs/mongodb.js";
+import userModel from "./models/userModel.js";
 
 
 // import connectDB from "./config/mongodb.js";
@@ -24,7 +25,7 @@ app.use(cors())
 
 // API Endpoint
 app.get('/', (req,res)=> res.send("API Working"));
-// app.use('/api/auth', authRouter)
+app.use('/api/user', userModel)
 // app.use('/api/user', userRouter)
 
 
